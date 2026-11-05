@@ -1,0 +1,23 @@
+# Material de referência privado: não publicar
+reference/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Dependências e builds futuros
+node_modules/
+dist/
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log

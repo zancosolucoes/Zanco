@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zanco | Assistência técnica e soluções em tecnologia</title>
+  <meta name="description" content="Assistência técnica para notebooks, computadores e celulares, com diagnóstico explicado e orçamento aprovado antes do reparo.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0a'/%3E%3Cpath d='M10 10h12L10 22h12' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>
+    // Liga as animações antes da primeira pintura. Sem o script principal em 3 s, mostra tudo parado.
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      var root = document.documentElement;
+      root.classList.add("motion");
+      setTimeout(function () {
+        if (root.dataset.motionReady === undefined) root.classList.remove("motion");
+      }, 3000);
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5Z"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19.5h20"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 20h8"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+    <symbol id="i-fan" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="1.5"/><path d="M12 10.5c0-3 .8-5 3-5s2.5 3-3 5ZM13.5 12c3 0 5 .8 5 3s-3 2.5-5-3ZM12 13.5c0 3-.8 5-3 5s-2.5-3 3-5ZM10.5 12c-3 0-5-.8-5-3s3-2.5 5 3Z"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></symbol>
+    <symbol id="i-data" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.300 8-3v-13M4 12c0 1.700 3.600 3 8 3s8-1.300 8-3"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2.500h8l4.500 4.500v14.500H6z"/><path d="M14 2.500V7h4.500M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20.500 20.500-4.500-4.500"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16.500V10.500a6 6 0 1 1 12 0v6l1.500 2h-15zM10 21h4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.500 4.500 5.500v6c0 4.700 3 8.300 7.500 10 4.500-1.700 7.500-5.300 7.500-10v-6z"/><path d="m8.800 12 2.300 2.300 4.200-4.500"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.500" cy="9.500" r="1.500"/><path d="m3.500 17.500 5-5 3.500 3.500 3-3 6 5.500"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.500s7.500-6.300 7.500-12a7.500 7.500 0 1 0-15 0c0 5.700 7.500 12 7.500 12Z"/><circle cx="12" cy="9.500" r="2.500"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.500"/><path d="M12 6.500V12l3.500 2"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.500v13l10.500-6.500z"/></symbol>
+    <symbol id="logo-mark" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="currentColor"/><path class="logo-z" d="M10 10h12L10 22h12" fill="none" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <!-- 1. Navegação -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Principal">
+      <a class="logo" href="#topo" aria-label="Zanco, início">
+        <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <span class="logo__word">Zanco</span>
+      </a>
+
+      <ul class="nav__links">
+        <li class="nav__dropdown">
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="painel-servicos">
+            Serviços <svg class="i i--16" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <div class="nav__panel" id="painel-servicos" hidden>
+            <div class="nav__columns">
+              <div class="nav__group">
+                <p class="nav__group-title">Reparos</p>
+                <ul>
+                  <li><a href="#s-notebooks"><span>Notebooks</span><small>Tela, teclado, bateria e carga.</small></a></li>
+                  <li><a href="#s-computadores"><span>Computadores</span><small>Diagnóstico e troca de peças.</small></a></li>
+                  <li><a href="#s-celulares"><span>Celulares</span><small>Tela, bateria e conector.</small></a></li>
+                </ul>
+              </div>
+              <div class="nav__group">
+                <p class="nav__group-title">Desempenho</p>
+                <ul>
+                  <li><a href="#s-limpeza"><span>Limpeza e prevenção</span><small>Menos calor e menos falhas.</small></a></li>
+                  <li><a href="#s-upgrade"><span>Upgrade</span><small>SSD e memória para ganhar fôlego.</small></a></li>
+                </ul>
+              </div>
+              <div class="nav__group">
+                <p class="nav__group-title">Dados e sistema</p>
+                <ul>
+                  <li><a href="#s-dados"><span>Backup e sistema</span><small>Cópia de arquivos, formatação e vírus.</small></a></li>
+                </ul>
+              </div>
+            </div>
+            <a class="nav__panel-footer" href="#triagem">
+              Não sabe do que precisa? Descreva o problema
+              <svg class="i i--20" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+        </li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#triagem">Triagem</a></li>
+        <li><a href="#duvidas">Dúvidas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <div class="nav__right">
+        <a class="btn btn--primary btn--nav" href="#contato" data-whatsapp>
+          <span class="only-wide">Falar no WhatsApp</span><span class="only-narrow">WhatsApp</span>
+        </a>
+        <details class="nav__menu">
+          <summary aria-label="Abrir menu"><svg class="i i--24" aria-hidden="true"><use href="#i-menu"/></svg></summary>
+          <ul>
+            <li>
+              <details class="nav__mobile-group">
+                <summary>Serviços <svg class="i i--20" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+                <ul>
+                  <li><a href="#s-notebooks">Notebooks</a></li>
+                  <li><a href="#s-computadores">Computadores</a></li>
+                  <li><a href="#s-celulares">Celulares</a></li>
+                  <li><a href="#s-limpeza">Limpeza e prevenção</a></li>
+                  <li><a href="#s-upgrade">Upgrade</a></li>
+                  <li><a href="#s-dados">Backup e sistema</a></li>
+                </ul>
+              </details>
+            </li>
+            <li><a href="#como-funciona">Como funciona</a></li>
+            <li><a href="#triagem">Triagem</a></li>
+            <li><a href="#duvidas">Dúvidas</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </details>
+      </div>
+    </nav>
+  </header>
+  <div class="nav-backdrop" aria-hidden="true"></div>
+
+  <main id="conteudo">
+    <!-- 2. Hero -->
+    <section class="hero" id="topo" aria-labelledby="hero-title">
+      <div class="container hero__copy">
+        <p class="eyebrow rise">Soluções em tecnologia · Assistência técnica</p>
+        <h1 class="hero__title rise" id="hero-title" style="--d:60ms">Seu equipamento de volta, <span class="muted">sem surpresa no orçamento.</span></h1>
+        <p class="hero__sub rise" style="--d:120ms">A Zanco encontra o defeito, explica o que precisa ser feito e só começa o reparo depois da sua aprovação.</p>
+        <div class="hero__cta rise" style="--d:180ms">
+          <a class="btn btn--primary btn--lg" href="#triagem">Descrever meu problema <svg class="i i--24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--secondary btn--lg" href="#contato" data-whatsapp>Falar no WhatsApp</a>
+        </div>
+        <p class="note rise" style="--d:240ms"><strong>Você aprova antes.</strong> Nenhum reparo começa sem o seu ok.</p>
+      </div>
+
+      <div class="container hero__frame">
+        <p class="scribble" aria-hidden="true"><span>exemplo ilustrativo</span></p>
+        <div class="os-wrap">
+          <div class="os" data-os>
+            <aside class="os__side">
+              <div class="os__brand">
+                <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+                <span>Ordem de serviço</span>
+              </div>
+              <ol class="os__steps" data-os-steps>
+                <li>Recebido</li>
+                <li>Diagnóstico</li>
+                <li>Aprovação</li>
+                <li>Reparo</li>
+                <li>Pronto</li>
+              </ol>
+            </aside>
+            <div class="os__main">
+              <div class="os__pills" role="group" aria-label="Escolha um exemplo de atendimento">
+                <button class="os__pill is-on" type="button" aria-pressed="true" data-device="notebook">Notebook</button>
+                <button class="os__pill" type="button" aria-pressed="false" data-device="computador">Computador</button>
+                <button class="os__pill" type="button" aria-pressed="false" data-device="celular">Celular</button>
+              </div>
+              <div class="os__head">
+                <div>
+                  <p class="os__label">Equipamento</p>
+                  <p class="os__device" data-os-name>Notebook</p>
+                </div>
+                <p class="os__status" data-os-status>Aguardando sua aprovação</p>
+              </div>
+              <div class="os__grid">
+                <div class="os__card">
+                  <p class="os__label">Diagnóstico</p>
+                  <ul class="os__checks" data-os-checks>
+                    <li><span>Bateria</span><i style="--v:38"></i><em>Desgastada</em></li>
+                    <li><span>Armazenamento</span><i style="--v:64"></i><em>Atenção</em></li>
+                    <li><span>Temperatura</span><i style="--v:52"></i><em>Acima do ideal</em></li>
+                    <li><span>Memória</span><i style="--v:100"></i><em>Sem falhas</em></li>
+                  </ul>
+                </div>
+                <div class="os__card os__card--dark">
+                  <p class="os__label">Orçamento proposto</p>
+                  <ul class="os__items" data-os-items>
+                    <li><span>Troca de bateria</span><b>R$ 000,00</b></li>
+                    <li><span>Limpeza interna</span><b>R$ 000,00</b></li>
+                  </ul>
+                  <p class="os__next" data-os-next>O reparo começa depois do seu ok.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Faixa de equipamentos -->
+    <section class="strip" aria-labelledby="strip-title">
+      <h2 class="strip__title" id="strip-title" data-reveal="fade">O que passa pela nossa bancada</h2>
+      <div class="strip__row">
+        <div class="strip__track" data-marquee>
+          <ul class="strip__copy">
+            <li><svg class="i i--24" aria-hidden="true"><use href="#i-laptop"/></svg>Notebooks</li>
+            <li><svg class="i i--24" aria-hidden="true"><use href="#i-desktop"/></svg>Computadores</li>
+            <li><svg class="i i--24" aria-hidden="true"><use href="#i-phone"/></svg>Celulares</li>
+            <li><svg class="i i--24" aria-hidden="true"><use href="#i-chip"/></svg>Componentes</li>
+            <li><svg class="i i--24" aria-hidden="true"><use href="#i-data"/></svg>Dados e sistema</li>
+            <li><svg class="i i--24" aria-hidden="true"><use href="#i-laptop"/></svg>Notebooks</li>
+            <li><svg class="i i--24" aria-hidden="true"><use href="#i-desktop"/></svg>Computadores</li>
+            <li><svg class="i i--24" aria-hidden="true"><use href="#i-phone"/></svg>Celulares</li>
+            <li><svg class="i i--24" aria-hidden="true"><use href="#i-chip"/></svg>Componentes</li>
+            <li><svg class="i i--24" aria-hidden="true"><use href="#i-data"/></svg>Dados e sistema</li>
+          </ul>
+          <ul class="strip__copy" aria-hidden="true">
+            <li><svg class="i i--24"><use href="#i-laptop"/></svg>Notebooks</li>
+            <li><svg class="i i--24"><use href="#i-desktop"/></svg>Computadores</li>
+            <li><svg class="i i--24"><use href="#i-phone"/></svg>Celulares</li>
+            <li><svg class="i i--24"><use href="#i-chip"/></svg>Componentes</li>
+            <li><svg class="i i--24"><use href="#i-data"/></svg>Dados e sistema</li>
+            <li><svg class="i i--24"><use href="#i-laptop"/></svg>Notebooks</li>
+            <li><svg class="i i--24"><use href="#i-desktop"/></svg>Computadores</li>
+            <li><svg class="i i--24"><use href="#i-phone"/></svg>Celulares</li>
+            <li><svg class="i i--24"><use href="#i-chip"/></svg>Componentes</li>
+            <li><svg class="i i--24"><use href="#i-data"/></svg>Dados e sistema</li>
+          </ul>
+        </div>
+      </div>
+      <button class="strip__pause" type="button" aria-pressed="false" data-marquee-toggle>
+        <svg class="i i--16" aria-hidden="true"><use href="#i-pause"/></svg><span>Pausar animação</span>
+      </button>
+    </section>
+
+    <!-- 4. Argumento central -->
+    <section class="promise" id="diferenciais" aria-labelledby="promise-title">
+      <svg class="trace trace--left" data-parallax-x="-0.35" viewBox="0 0 400 320" aria-hidden="true"><path d="M0 60h150l40 40h90M0 130h90l50 50h150l30 30M0 220h170l40-40M0 280h240l40-40h60"/><circle cx="286" cy="100" r="6"/><circle cx="326" cy="216" r="6"/><circle cx="215" cy="176" r="6"/><circle cx="346" cy="240" r="6"/></svg>
+      <svg class="trace trace--right" data-parallax-x="0.35" viewBox="0 0 400 320" aria-hidden="true"><path d="M400 40H250l-40 40h-90M400 120H310l-50 50H110l-30 30M400 210H230l-40-40M400 270H160l-40-40H60"/><circle cx="114" cy="80" r="6"/><circle cx="74" cy="206" r="6"/><circle cx="185" cy="166" r="6"/><circle cx="54" cy="230" r="6"/></svg>
+
+      <div class="container promise__inner">
+        <div class="promise__head" data-reveal>
+          <h2 class="display" id="promise-title"><span class="muted">Primeiro a explicação.</span> Depois o reparo.</h2>
+          <p class="lead lead--lg">Antes de trocar qualquer peça, você recebe o diagnóstico e o orçamento para decidir com calma.</p>
+        </div>
+        <ul class="promise__cards" data-reveal-stagger="90">
+          <li data-reveal>
+            <article class="card">
+              <span class="card__icon"><svg class="i i--32" aria-hidden="true"><use href="#i-search"/></svg></span>
+              <h3>Defeito encontrado e explicado</h3>
+            </article>
+          </li>
+          <li data-reveal>
+            <article class="card">
+              <span class="card__icon"><svg class="i i--32" aria-hidden="true"><use href="#i-doc"/></svg></span>
+              <h3>Orçamento aprovado por você</h3>
+            </article>
+          </li>
+          <li data-reveal>
+            <article class="card">
+              <span class="card__icon"><svg class="i i--32" aria-hidden="true"><use href="#i-bell"/></svg></span>
+              <h3>Aviso a cada etapa do serviço</h3>
+            </article>
+          </li>
+          <li data-reveal>
+            <article class="card">
+              <span class="card__icon"><svg class="i i--32" aria-hidden="true"><use href="#i-shield"/></svg></span>
+              <h3>Garantia de <mark class="tbd">[prazo]</mark> no reparo</h3>
+            </article>
+          </li>
+        </ul>
+        <div class="stack-center" data-reveal>
+          <a class="btn btn--primary" href="#triagem">Ver o que pode ser o defeito <svg class="i i--24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <p class="note"><strong>Você aprova antes.</strong> Nenhum reparo começa sem o seu ok.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Serviços -->
+    <section class="services" id="servicos" aria-labelledby="services-title">
+      <div class="container services__inner">
+        <div class="services__copy" data-reveal="left">
+          <h2 class="h2" id="services-title"><span class="muted">Do conserto</span> à prevenção.</h2>
+          <p class="lead">Começamos pela assistência técnica para resolver o problema de hoje e deixar o seu equipamento pronto para durar mais.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="#contato" data-whatsapp>Pedir atendimento <svg class="i i--24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--secondary" href="#como-funciona">Como funciona</a>
+          </div>
+        </div>
+        <ul class="services__list" data-reveal-stagger="70">
+          <li id="s-notebooks" data-reveal>
+            <span class="services__icon"><svg class="i i--24" aria-hidden="true"><use href="#i-laptop"/></svg></span>
+            <div><h3>Reparo de notebooks</h3><p>Tela, teclado, bateria, carregamento e placa.</p></div>
+          </li>
+          <li id="s-computadores" data-reveal>
+            <span class="services__icon"><svg class="i i--24" aria-hidden="true"><use href="#i-desktop"/></svg></span>
+            <div><h3>Manutenção de computadores</h3><p>Diagnóstico completo e troca de componentes.</p></div>
+          </li>
+          <li id="s-celulares" data-reveal>
+            <span class="services__icon"><svg class="i i--24" aria-hidden="true"><use href="#i-phone"/></svg></span>
+            <div><h3>Reparo de celulares</h3><p>Tela, bateria e conector de carga.</p></div>
+          </li>
+          <li id="s-limpeza" data-reveal>
+            <span class="services__icon"><svg class="i i--24" aria-hidden="true"><use href="#i-fan"/></svg></span>
+            <div><h3>Limpeza e prevenção</h3><p>Limpeza interna, pasta térmica e revisão geral.</p></div>
+          </li>
+          <li id="s-upgrade" data-reveal>
+            <span class="services__icon"><svg class="i i--24" aria-hidden="true"><use href="#i-chip"/></svg></span>
+            <div><h3>Upgrade de desempenho</h3><p>SSD e memória para o equipamento ganhar velocidade.</p></div>
+          </li>
+          <li id="s-dados" data-reveal>
+            <span class="services__icon"><svg class="i i--24" aria-hidden="true"><use href="#i-data"/></svg></span>
+            <div><h3>Backup e sistema</h3><p>Cópia de arquivos, formatação e remoção de vírus.</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. Como funciona -->
+    <section class="process" id="como-funciona" aria-labelledby="process-title">
+      <div class="container process__inner">
+        <div class="process__copy" data-reveal>
+          <h2 class="h2" id="process-title">Cinco etapas, <span class="muted">nenhuma no escuro.</span></h2>
+          <p class="lead">Você sempre sabe em que ponto está o seu equipamento e o que vem a seguir.</p>
+          <div class="process__cta">
+            <a class="btn btn--primary btn--block" href="#contato" data-whatsapp>Começar um atendimento</a>
+            <p class="note"><strong>Você aprova antes.</strong> Nenhum reparo começa sem o seu ok.</p>
+          </div>
+        </div>
+        <ol class="timeline" data-reveal-stagger="80">
+          <li data-reveal><h3>Recebemos o equipamento</h3><p>Registramos o estado dele e o problema que você relatou.</p></li>
+          <li data-reveal><h3>Fazemos o diagnóstico</h3><p>Testamos na bancada até encontrar a causa.</p></li>
+          <li data-reveal><h3>Você aprova o orçamento</h3><p>Explicamos as opções, com valor e prazo, para você decidir.</p></li>
+          <li data-reveal><h3>Executamos o reparo</h3><p>Fazemos só o que foi aprovado e testamos de novo no final.</p></li>
+          <li data-reveal><h3>Devolvemos pronto para uso</h3><p>Você recebe o equipamento com as orientações e a garantia.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7. Ferramenta interativa -->
+    <section class="triage-wrap" id="triagem" aria-labelledby="triage-title">
+      <div class="triage">
+        <div class="triage__head" data-reveal>
+          <h2 class="h2" id="triage-title">Conte o que aconteceu e <span class="muted-dark">veja por onde começar.</span></h2>
+          <p class="lead">Escolha o equipamento e o problema. Em seguida, envie tudo para a nossa equipe com um toque.</p>
+        </div>
+
+        <div class="tool" data-triage data-reveal="zoom">
+          <div class="tabs" role="group" aria-label="Tipo de equipamento" style="--tab:0">
+            <span class="tabs__pill" aria-hidden="true"></span>
+            <button type="button" class="is-on" aria-pressed="true" data-tab="notebook"><svg class="i i--20" aria-hidden="true"><use href="#i-laptop"/></svg>Notebook</button>
+            <button type="button" aria-pressed="false" data-tab="computador"><svg class="i i--20" aria-hidden="true"><use href="#i-desktop"/></svg>Computador</button>
+            <button type="button" aria-pressed="false" data-tab="celular"><svg class="i i--20" aria-hidden="true"><use href="#i-phone"/></svg>Celular</button>
+          </div>
+
+          <div class="glass tool__field">
+            <label for="problema">Qual é o problema?</label>
+            <div class="select">
+              <select id="problema" data-problem></select>
+              <svg class="i i--20" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </div>
+          </div>
+
+          <div class="glass tool__result" aria-live="polite">
+            <p class="tool__kicker">Pode estar relacionado a</p>
+            <ul class="tool__causes" data-causes></ul>
+            <hr>
+            <p class="tool__kicker">O que fazer agora</p>
+            <p class="tool__tip" data-tip></p>
+          </div>
+
+          <a class="btn btn--inverse btn--wide" href="#contato" data-whatsapp data-triage-cta>Enviar para a Zanco <svg class="i i--24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <p class="tool__disclaimer">Esta é uma orientação inicial. A causa só é confirmada no diagnóstico.</p>
+          <noscript><p class="tool__disclaimer">Para usar a triagem, ative o JavaScript ou fale com a gente pela seção de contato.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Depoimentos -->
+    <section class="voices" id="depoimentos" aria-labelledby="voices-title">
+      <div class="container">
+        <h2 class="h2 voices__title" id="voices-title" data-reveal>Quem já passou <span class="muted">pela nossa bancada.</span></h2>
+      </div>
+      <ul class="voices__row" tabindex="0" aria-label="Depoimentos de clientes, área com rolagem">
+        <li class="person" data-reveal>
+          <div class="ph ph--person"><svg class="i i--32" aria-hidden="true"><use href="#i-image"/></svg><span>Foto ou vídeo do cliente</span></div>
+          <p class="person__name"><mark class="tbd">[Nome do cliente]</mark></p>
+          <p class="person__role">Serviço realizado</p>
+        </li>
+        <li class="person" data-reveal>
+          <div class="ph ph--person"><svg class="i i--32" aria-hidden="true"><use href="#i-image"/></svg><span>Foto ou vídeo do cliente</span></div>
+          <p class="person__name"><mark class="tbd">[Nome do cliente]</mark></p>
+          <p class="person__role">Serviço realizado</p>
+        </li>
+        <li class="person" data-reveal>
+          <div class="ph ph--person"><svg class="i i--32" aria-hidden="true"><use href="#i-image"/></svg><span>Foto ou vídeo do cliente</span></div>
+          <p class="person__name"><mark class="tbd">[Nome do cliente]</mark></p>
+          <p class="person__role">Serviço realizado</p>
+        </li>
+        <li class="person" data-reveal>
+          <div class="ph ph--person"><svg class="i i--32" aria-hidden="true"><use href="#i-image"/></svg><span>Foto ou vídeo do cliente</span></div>
+          <p class="person__name"><mark class="tbd">[Nome do cliente]</mark></p>
+          <p class="person__role">Serviço realizado</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 9. Atendimento -->
+    <section class="care" id="atendimento" aria-labelledby="care-title">
+      <div class="container care__inner">
+        <div class="care__copy" data-reveal>
+          <h2 class="h2" id="care-title">Sem termos difíceis. <span class="muted">Com resposta clara.</span></h2>
+          <p class="lead">Você fala com quem acompanha o seu equipamento e entende o que está sendo feito, mesmo sem saber nada de tecnologia.</p>
+          <a class="btn btn--primary" href="#contato" data-whatsapp><svg class="i i--20" aria-hidden="true"><use href="#i-chat"/></svg>Falar com a equipe</a>
+        </div>
+      </div>
+      <div class="ph ph--care" data-reveal="right"><svg class="i i--32" aria-hidden="true"><use href="#i-image"/></svg><span>Foto da equipe ou da bancada</span></div>
+    </section>
+
+    <!-- 10. Dúvidas -->
+    <section class="faq" id="duvidas" aria-labelledby="faq-title">
+      <div class="container faq__inner">
+        <div class="faq__head" data-reveal>
+          <h2 class="h2" id="faq-title"><span class="muted">Ficou alguma dúvida?</span> Comece por aqui.</h2>
+          <p class="lead">As perguntas mais comuns de quem precisa de assistência técnica.</p>
+        </div>
+        <div class="faq__list">
+          <details class="item" name="faq" open data-reveal>
+            <summary><h3>O diagnóstico é cobrado?</h3><span class="item__icon" aria-hidden="true"></span></summary>
+            <p><mark class="tbd">[Definir: gratuito ou valor, e se é abatido do reparo.]</mark></p>
+          </details>
+          <details class="item" name="faq" data-reveal data-reveal-delay="80">
+            <summary><h3>Quanto tempo leva o reparo?</h3><span class="item__icon" aria-hidden="true"></span></summary>
+            <p>Depende do defeito e da disponibilidade de peças. Você recebe o prazo junto com o orçamento, antes de aprovar. <mark class="tbd">[Prazo médio a definir.]</mark></p>
+          </details>
+          <details class="item" name="faq" data-reveal data-reveal-delay="160">
+            <summary><h3>E se eu não aprovar o orçamento?</h3><span class="item__icon" aria-hidden="true"></span></summary>
+            <p>O reparo não é feito e você retira o equipamento. <mark class="tbd">[Confirmar condições.]</mark></p>
+          </details>
+          <details class="item" name="faq" data-reveal data-reveal-delay="240">
+            <summary><h3>Preciso fazer backup antes?</h3><span class="item__icon" aria-hidden="true"></span></summary>
+            <p>Sempre que o equipamento ainda ligar, é o mais seguro. Se ele não ligar, avise a equipe para avaliarmos a recuperação dos arquivos.</p>
+          </details>
+          <details class="item" name="faq" data-reveal data-reveal-delay="320">
+            <summary><h3>O reparo tem garantia?</h3><span class="item__icon" aria-hidden="true"></span></summary>
+            <p>Sim. <mark class="tbd">[Definir prazo e cobertura.]</mark></p>
+          </details>
+        </div>
+        <div class="faq__cta" data-reveal>
+          <a class="btn btn--primary btn--block" href="#contato" data-whatsapp>Perguntar para a equipe</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Fechamento -->
+    <section class="closing" id="contato" aria-labelledby="closing-title">
+      <div class="container closing__copy" data-reveal-stagger="100">
+        <h2 class="h2" id="closing-title" data-reveal>Seu equipamento parou? <span class="muted">Vamos ver isso.</span></h2>
+        <p class="lead" data-reveal>Mande uma mensagem contando o que aconteceu e combine o próximo passo com a nossa equipe.</p>
+        <div class="closing__btn" data-reveal>
+          <a class="btn btn--primary btn--block" href="#contato" data-whatsapp><svg class="i i--20" aria-hidden="true"><use href="#i-chat"/></svg>Chamar no WhatsApp</a>
+          <p class="note"><strong>Você aprova antes.</strong> Nenhum reparo começa sem o seu ok.</p>
+        </div>
+        <ul class="closing__info" data-reveal>
+          <li><svg class="i i--24" aria-hidden="true"><use href="#i-chat"/></svg><div><b>WhatsApp</b><mark class="tbd">[número]</mark></div></li>
+          <li><svg class="i i--24" aria-hidden="true"><use href="#i-pin"/></svg><div><b>Endereço</b><mark class="tbd">[endereço]</mark></div></li>
+          <li><svg class="i i--24" aria-hidden="true"><use href="#i-clock"/></svg><div><b>Horário</b><mark class="tbd">[horário]</mark></div></li>
+        </ul>
+      </div>
+      <div class="closing__mark" aria-hidden="true"><span data-parallax-dock="0.2">Zanco</span></div>
+    </section>
+  </main>
+
+  <!-- 12. Rodapé -->
+  <div class="footer-wrap">
+    <footer class="footer">
+      <div class="footer__inner">
+        <nav class="footer__cols" aria-label="Rodapé">
+          <div class="col">
+            <p class="col__title">Reparos</p>
+            <ul>
+              <li><a href="#s-notebooks">Notebooks</a></li>
+              <li><a href="#s-computadores">Computadores</a></li>
+              <li><a href="#s-celulares">Celulares</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <p class="col__title">Desempenho e dados</p>
+            <ul>
+              <li><a href="#s-limpeza">Limpeza e prevenção</a></li>
+              <li><a href="#s-upgrade">Upgrade</a></li>
+              <li><a href="#s-dados">Backup e sistema</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <p class="col__title">Zanco</p>
+            <ul>
+              <li><a href="#como-funciona">Como funciona</a></li>
+              <li><a href="#triagem">Triagem</a></li>
+              <li><a href="#duvidas">Dúvidas</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <p class="col__title">Contato</p>
+            <ul>
+              <li><a href="#contato" data-whatsapp>WhatsApp</a></li>
+              <li><span class="tbd tbd--dark">[e-mail]</span></li>
+              <li><span class="tbd tbd--dark">[redes sociais]</span></li>
+            </ul>
+          </div>
+        </nav>
+        <hr>
+        <div class="footer__bottom">
+          <a class="logo logo--inverse" href="#topo" aria-label="Zanco, voltar ao início">
+            <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+            <span class="logo__word">Zanco</span>
+          </a>
+          <p>© 2026 Zanco. CNPJ <span class="tbd tbd--dark">[a definir]</span></p>
+        </div>
+        <p class="footer__legal">Soluções em tecnologia. <span class="tbd tbd--dark">[Termos de uso e política de privacidade a definir.]</span></p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
