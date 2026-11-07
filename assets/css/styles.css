@@ -417,7 +417,10 @@ hr { border: 0; margin: 0; }
 @keyframes strip { to { translate: -50%; } }
 
 /* Argumento central */
-.promise { position: relative; overflow: hidden; padding: 96px 0 var(--section); }
+.promise {
+  --hand-w: min(calc((100vw - 690px) / 2), 440px);
+  position: relative; overflow: hidden; padding: 96px 0 var(--section);
+}
 .promise__inner { position: relative; display: flex; flex-direction: column; align-items: center; gap: 48px; }
 .promise__head { max-width: 680px; text-align: center; }
 .promise__head .lead { margin-top: 20px; }
@@ -433,26 +436,32 @@ hr { border: 0; margin: 0; }
 .card__icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: var(--radius-md); background: var(--accent-soft); transition: background-color .3s, color .3s; }
 .card h3 { font-size: 20px; font-weight: 500; line-height: 1.25; letter-spacing: -.025em; text-wrap: balance; }
 .stack-center { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
-.trace {
-  position: absolute; top: 72px;
-  width: min(380px, 25vw);
-  fill: none; stroke: var(--accent); stroke-width: 1.5;
-  pointer-events: none;
+/* Mãos que se aproximam ao rolar. A largura respeita o espaço ao lado do título. */
+.hand {
+  position: absolute;
+  width: var(--hand-w); height: auto;
+  pointer-events: none; user-select: none;
 }
-.trace circle { fill: var(--bg); }
-.trace--left { left: 0; }
-.trace--right { right: 0; }
+.hand--left { top: 88px; left: 0; }
+.hand--right { top: 40px; right: 0; }
 
 @media (hover: hover) {
   .card:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1px var(--accent), var(--shadow-soft); }
   .card:hover .card__icon { background: var(--primary); color: var(--on-primary); }
 }
+/* Sem espaço ao lado do título, as mãos ocupam uma faixa acima dele. */
+@media (width <= 1200px) {
+  .promise {
+    --hand-w: min(44vw, 320px);
+    padding-top: calc(var(--hand-w) / 1.275 + 56px);
+  }
+  .hand--left { top: 48px; }
+  .hand--right { top: 24px; }
+}
 @media (width <= 1100px) {
   .promise__cards { grid-template-columns: repeat(2, minmax(0, 280px)); }
-  .trace { display: none; }
 }
 @media (width <= 767px) {
-  .promise { padding-top: 64px; }
   .promise__inner { gap: 32px; }
   .promise__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .card { gap: 20px; padding: 16px; border-radius: 20px; }
@@ -634,20 +643,31 @@ hr { border: 0; margin: 0; }
 .ph--person { aspect-ratio: 280 / 400; border-radius: var(--radius-lg); }
 
 /* Atendimento */
-.care { position: relative; display: flex; align-items: center; min-height: 600px; overflow: hidden; }
-.care__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; max-width: 520px; }
-.care__copy .btn { margin-top: 16px; }
-.ph--care {
-  position: absolute; top: 0; bottom: 0; right: 0;
-  width: min(720px, 50vw);
-  border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+.care {
+  --care-w: min(720px, 50vw);
+  position: relative; display: flex; align-items: center;
+  min-height: calc(var(--care-w) / 1.2);
+  padding-block: 32px;
+  overflow: hidden;
 }
-@media (width <= 1023px) { .care__copy { max-width: 44%; } }
+.care__copy {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+  max-width: min(520px, calc(100vw - var(--care-w) - var(--gutter) - 32px));
+}
+.care__copy .accent { display: block; }
+.care__copy .btn { margin-top: 16px; }
+.care__media {
+  position: absolute; inset-block: 0; right: 0;
+  width: var(--care-w); height: auto; aspect-ratio: 6 / 5;
+  margin-block: auto;
+  border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+  object-fit: cover;
+}
 @media (width <= 767px) {
-  .care { display: block; min-height: 0; padding-bottom: 8px; }
+  .care { display: block; min-height: 0; padding-block: 0 8px; }
   .care__copy { align-items: stretch; max-width: none; }
   .care__copy .btn { width: 100%; }
-  .ph--care { position: static; width: auto; height: 280px; margin: 32px 0 0 20px; }
+  .care__media { position: static; display: block; width: calc(100% - 20px); aspect-ratio: 5 / 4; margin: 32px 0 0 20px; }
 }
 
 /* Dúvidas */

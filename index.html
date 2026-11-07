@@ -236,8 +236,8 @@
 
     <!-- 4. Argumento central -->
     <section class="promise" id="diferenciais" aria-labelledby="promise-title">
-      <svg class="trace trace--left" data-parallax-x="-0.35" viewBox="0 0 400 320" aria-hidden="true"><path d="M0 60h150l40 40h90M0 130h90l50 50h150l30 30M0 220h170l40-40M0 280h240l40-40h60"/><circle cx="286" cy="100" r="6"/><circle cx="326" cy="216" r="6"/><circle cx="215" cy="176" r="6"/><circle cx="346" cy="240" r="6"/></svg>
-      <svg class="trace trace--right" data-parallax-x="0.35" viewBox="0 0 400 320" aria-hidden="true"><path d="M400 40H250l-40 40h-90M400 120H310l-50 50H110l-30 30M400 210H230l-40-40M400 270H160l-40-40H60"/><circle cx="114" cy="80" r="6"/><circle cx="74" cy="206" r="6"/><circle cx="185" cy="166" r="6"/><circle cx="54" cy="230" r="6"/></svg>
+      <img class="hand hand--left" src="assets/img/mao-gesto.webp" width="960" height="579" alt="" loading="lazy" decoding="async" data-parallax-x="-0.7">
+      <img class="hand hand--right" src="assets/img/mao-celular.webp" width="960" height="753" alt="" loading="lazy" decoding="async" data-parallax-x="0.7">
 
       <div class="container promise__inner">
         <div class="promise__head" data-reveal>
@@ -415,7 +415,16 @@
           <a class="btn btn--primary" href="#contato" data-whatsapp><svg class="i i--20" aria-hidden="true"><use href="#i-chat"/></svg>Falar com a equipe</a>
         </div>
       </div>
-      <div class="ph ph--care" data-reveal="right"><svg class="i i--32" aria-hidden="true"><use href="#i-image"/></svg><span>Foto da equipe ou da bancada</span></div>
+      <img
+        class="care__media"
+        src="assets/img/equipe_assistencia-1440.webp"
+        srcset="assets/img/equipe_assistencia-800.webp 800w, assets/img/equipe_assistencia-1440.webp 1440w"
+        sizes="(width <= 767px) calc(100vw - 20px), min(720px, 50vw)"
+        width="1440" height="960"
+        alt="Três técnicos de camiseta preta sorrindo ao redor de uma bancada, com um notebook aberto em manutenção."
+        loading="lazy" decoding="async"
+        data-reveal="right">
+
     </section>
 
     <!-- 10. Dúvidas -->
@@ -465,7 +474,7 @@
         <ul class="closing__info" data-reveal>
           <li><svg class="i i--24" aria-hidden="true"><use href="#i-chat"/></svg><div><b>WhatsApp</b><mark class="tbd">[número]</mark></div></li>
           <li><svg class="i i--24" aria-hidden="true"><use href="#i-pin"/></svg><div><b>Endereço</b><mark class="tbd">[endereço]</mark></div></li>
-          <li><svg class="i i--24" aria-hidden="true"><use href="#i-clock"/></svg><div><b>Horário</b><mark class="tbd">[horário]</mark></div></li>
+          <li><svg class="i i--24" aria-hidden="true"><use href="#i-clock"/></svg><div><b>Horário</b><span>09:00 - 18:00</span></div></li>
         </ul>
       </div>
       <div class="closing__mark" aria-hidden="true"><span data-parallax-dock="0.2">Zanco</span></div>

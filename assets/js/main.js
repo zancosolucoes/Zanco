@@ -59,14 +59,19 @@
     var visible = new Set();
     var queued = false;
 
+    /* Observa o elemento pai: um item deslocado para fora de um pai com overflow
+       escondido deixaria de ser detectado e ficaria preso fora da tela. */
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) visible.add(entry.target);
-        else visible.delete(entry.target);
+        els.forEach(function (el) {
+          if (el.parentElement !== entry.target) return;
+          if (entry.isIntersecting) visible.add(el);
+          else visible.delete(el);
+        });
       });
       request();
     }, { rootMargin: "20% 0px" });
-    els.forEach(function (el) { io.observe(el); });
+    els.forEach(function (el) { io.observe(el.parentElement); });
 
     function request() {
       if (queued) return;
